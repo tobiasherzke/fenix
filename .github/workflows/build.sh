@@ -9,12 +9,12 @@ DISTRIBUTION=$3
 CONFIG=.github/workflows/configs/config-${DISTRIBUTION,,}-github-actions.conf
 
 if [ "$BOARD" == "Edge" ]; then
-	INSTALL_TYPES="EMMC SD-USB"
+	INSTALL_TYPES="SD-USB"
 else
 	if [ "$LINUX" == "mainline" ]; then
 		INSTALL_TYPES="SD-USB"
 	else
-		INSTALL_TYPES="EMMC SD-USB"
+		INSTALL_TYPES="SD-USB"
 	fi
 fi
 
@@ -35,7 +35,7 @@ else
 		LINUX_VER="4.9"
 		UBOOT_VER="2015.01"
 		if [ "$DISTRIBUTION" == "Ubuntu" ]; then
-			DISTRIB_TYPES="minimal server gnome"
+			DISTRIB_TYPES="minimal"
 		else
 			DISTRIB_TYPES="minimal server xfce"
 		fi
